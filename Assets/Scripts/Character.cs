@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour
 { 
     public string characterName;
     public int level;
@@ -15,8 +15,5 @@ public class Character : MonoBehaviour
     public AbilityScore intelligence;
     public AbilityScore wisdom;
     public AbilityScore charisma;
-
-    void Start()
-    {
-    }
+    public Weapon weapon;
 }
