@@ -87,6 +87,8 @@ public static class Rng_System
             total += SingleDieRoll(sides);
         }
 
+        Debug.Log($"Rolled {count}d{sides} + {modifier} with total: {total}");
+
         // Add modifier
         return total + modifier;
     }
@@ -113,8 +115,12 @@ public static class Rng_System
     static private int SingleDieRoll(int sides)
     {
         if (useSeededRandom)
+        {
             return randomGenerator.Next(1, sides + 1);
+        }
         else
+        {
             return UnityEngine.Random.Range(1, sides + 1);
+        }
     }
 }
