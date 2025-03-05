@@ -1,118 +1,106 @@
-# D&D Combat Simulator Development Schedule
+# D&D Combat Simulator Implementation Order
 
-## Phase 1: Foundation (Weeks 1-4)
+This document outlines the recommended implementation order for the D&D Combat Simulator project. The order is designed to:
 
-### Week 1: Core Infrastructure
-1. **CORE-001**: Unity Project Setup
-2. **CORE-004**: Game State Manager
-3. **CORE-003**: RNG System
-4. **CORE-002**: Save/Load System
+- Build functional systems in a dependency-based sequence
+- Provide playable milestones as early as possible
+- Ensure each new feature builds on stable foundations
+- Focus on core gameplay before expanding content
 
-### Week 2: Character Foundations
-1. **CHAR-001**: Character Data Model
-2. **CHAR-002**: Class Implementation - Fighter
-3. **CHAR-003**: Class Implementation - Wizard
-4. **PROG-001**: Level-Up System (Basic)
+## Phase 1: Minimal Playable Combat
 
-### Week 3: Combat Foundations
-1. **COMB-001**: Combat Data Model
-2. **COMB-006**: Initiative System
-3. **COMB-002**: Basic Attack Implementation
-4. **COMB-004**: Condition System
+**Goal:** Get a playable combat encounter working ASAP
 
-### Week 4: First Playable
-1. **CONT-001**: Spell Implementation - Cantrips
-2. **COMB-003**: Spell System Core
-3. **UI-002**: Character Sheet UI (Basic)
-4. **UI-003**: Combat UI (Basic)
+1. **ENEMY-001**: Create Enemy Base Class
+2. **COMBAT-001**: Implement Combat Manager
+3. **COMBAT-002**: Build Initiative System
+4. **COMBAT-003**: Basic Combat Loop
+5. **ENEMY-002**: Build Goblin Enemy
+6. **UI-001**: Health Display
+7. **UI-003**: Action UI
+8. **ENEMY-003**: Build Skeleton Enemy
+9. **UI-002**: Combat Log
+10. **UI-004**: Turn Indicators
+11. **COMBAT-004**: Combat Resolution
+12. **ENEMY-004**: Create Enemy Factory
 
-## Phase 2: Content Building (Weeks 5-8)
+**Milestone 1:** *Single combat encounter playable with Fighter vs. different enemies*
 
-### Week 5: Expanding Character Options
-1. **CHAR-004**: Class Implementation - Rogue
-2. **CHAR-005**: Remaining Classes
-3. **PROG-004**: XP System
-4. **PROG-005**: Class Feature Unlocks
+## Phase 2: Character Development
 
-### Week 6: Enemy & Item Systems
-1. **CONT-004**: Enemy Implementation - Beasts & Humanoids
-2. **CONT-005**: Enemy Implementation - Monsters & Undead
-3. **CONT-007**: Item Implementation - Weapons & Armor
-4. **COMB-005**: Combat AI Framework
+**Goal:** Add depth with multiple character classes and progression
 
-### Week 7: More Content & Mechanics
-1. **CHAR-006**: Race Implementation
-2. **CONT-002**: Spell Implementation - Level 1-3
-3. **CONT-008**: Magic Items
-4. **CONT-009**: Consumables
+13. **CLASS-001**: Spell System Foundation
+14. **CLASS-002**: Implement Spell Database
+15. **CLASS-003**: Wizard Character Class
+16. **CLASS-004**: Spell Effects System
+17. **INV-001**: Item Base Classes
+18. **INV-002**: Equipment System
+19. **INV-003**: Consumable Items
+20. **INV-004**: Inventory UI
+21. **PROG-001**: Experience System
+22. **PROG-002**: Level Up Mechanics
+23. **PROG-003**: Ability Score Improvements
+24. **PROG-004**: Class Feature Unlocks
 
-### Week 8: Encounters & Advanced Progression
-1. **CONT-010**: Encounter Design - Standard
-2. **PROG-002**: Ability Score Improvement
-3. **PROG-003**: Feat System
-4. **TEST-001**: Combat Balance Testing Framework
+**Milestone 2:** *Multiple character classes with progression through combat*
 
-## Phase 3: Systems & Experience (Weeks 9-12)
+## Phase 3: Roguelike Structure
 
-### Week 9: User Experience
-1. **CORE-005**: Procedural Generation Framework
-2. **UI-001**: Main Menu
-3. **CHAR-007**: Character Creation UI Flow
-4. **CHAR-008**: Background System
+**Goal:** Implement the core roguelike gameplay loop
 
-### Week 10: Game Flow
-1. **UI-004**: Encounter Map UI
-2. **UI-005**: Reward Screen
-3. **UI-006**: Level-Up Screen
-4. **UI-007**: Shop/Merchant Interface
+25. **MAP-001**: Encounter Node System
+26. **MAP-002**: Map Generation
+27. **MAP-003**: Map UI
+28. **MAP-004**: Special Encounter Types
+29. **RUN-001**: Run State Tracking
+30. **RUN-002**: Resource Management
+31. **RUN-003**: Difficulty Scaling
+32. **DEATH-001**: Death Handling
+33. **DEATH-002**: Run Summary
+34. **DEATH-003**: Character Creation
+35. **RUN-004**: Random Events
 
-### Week 11: Combat Depth
-1. **COMB-007**: Positioning System
-2. **COMB-008**: Action, Bonus Action, Reaction System
-3. **COMB-009**: Death & Stabilization System
-4. **UI-009**: Tooltips & Help System
+**Milestone 3:** *Complete roguelike loop with character creation through death*
 
-### Week 12: More Content & Balance
-1. **CONT-003**: Spell Implementation - Level 4-5
-2. **CONT-006**: Enemy Implementation - Elite & Boss Variants
-3. **CONT-011**: Encounter Design - Special
-4. **TEST-002**: Class Balance Analysis
+## Phase 4: Content Expansion
 
-## Phase 4: Meta & Polish (Weeks 13-16)
+**Goal:** Add variety and depth to gameplay
 
-### Week 13: Meta-progression
-1. **META-001**: Unlock Currency System
-2. **META-002**: Class/Race Unlocks
-3. **META-003**: Starting Bonus Unlocks
-4. **AV-001**: Asset Management System
+36. **CLASS-005**: Rogue Class Implementation
+37. **CLASS-006**: Cleric Class Implementation
+38. **CLASS-007**: Barbarian Class Implementation
+39. **ENEMY-005**: Elite Enemy Framework
+40. **ENEMY-006**: Boss Enemy System
+41. **ENEMY-007**: Enemy Families
+42. **ENEMY-008**: Special Abilities
+43. **ENV-001**: Combat Terrain System
+44. **ENV-002**: Hazards and Traps
+45. **ENV-003**: Weather and Conditions
+46. **CLASS-008**: Class Balance Testing
 
-### Week 14: Visuals & Balance
-1. **AV-002**: Character Visuals
-2. **AV-003**: Enemy Visuals
-3. **AV-004**: Combat Animation System
-4. **TEST-003**: Enemy Balance Testing
+**Milestone 4:** *Rich content variety across runs*
 
-### Week 15: Audio & Balance
-1. **TEST-004**: Item Balance Review
-2. **TEST-005**: Run Length Analysis
-3. **AV-005**: Sound Effect System
-4. **AV-006**: Music System
+## Phase 5: Meta Progression and Polish
 
-### Week 16: Polish
-1. **AV-007**: Visual Effect System
-2. **POL-001**: Performance Optimization
-3. **POL-002**: Tutorial Implementation
-4. **POL-003**: Final Visual Polish
+**Goal:** Add long-term progression and final polish
 
-## Phase 5: Finalization (Weeks 17-18)
+47. **META-001**: Persistent Currency
+48. **META-002**: Unlockable Content
+49. **META-003**: Permanent Upgrades
+50. **POL-001**: Combat Animations
+51. **POL-002**: Visual Feedback
+52. **POL-003**: UI Refinement
+53. **BAL-001**: Difficulty Tuning
+54. **BAL-002**: Class Balance
+55. **BAL-003**: Item and Ability Balance
 
-### Week 17: Final Touches
-1. **POL-004**: Localization Support
-2. **POL-005**: Accessibility Features
-3. **META-004**: Achievement System
-4. **META-005**: Run History
+**Milestone 5:** *Complete game with meta progression and polish*
 
-### Week 18: Release Preparation
-1. **UI-008**: Settings Menu
-2. **TEST-006**: Bug Tracking & Resolution (Final Pass)
-3. **POL-006**: Build & Release Preparation
+## Implementation Notes
+
+- Issues within each phase can be adjusted based on specific needs or interests
+- Testing should happen continuously, especially after completing each issue
+- Each milestone represents a good point to evaluate progress and adjust scope if needed
+- Early phases prioritize core gameplay over polish or content variety
+- Later phases assume a stable foundation to build upon
