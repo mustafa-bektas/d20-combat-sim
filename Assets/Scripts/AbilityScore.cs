@@ -25,4 +25,10 @@ public class AbilityScore
     {
         return modifier;
     }
+
+    public void AddBonus(int bonus)
+    {
+        score += bonus;
+        CalculateModifier();
+    }
 }
